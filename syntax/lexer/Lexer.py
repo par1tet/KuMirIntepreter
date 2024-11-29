@@ -3,7 +3,7 @@ from syntax. lexer. Token import Token
 class Lexer:
     def __init__(self, sourceCode):
         self.sourceCode = sourceCode
-        self.tokens = []
+        self.tokenStream = []
         self.numberString = 0
         self.numberCharacter = 0
 
@@ -12,7 +12,7 @@ class Lexer:
 
         self.numberCharacter+=tokenize["step"]
 
-        if tokenize['token']: self.tokens.append(Token(tokenize["token"]['type'], tokenize["token"]['value']))
+        if tokenize['token']: self.tokenStream.append(Token(tokenize["token"]['type'], tokenize["token"]['value']))
 
     def getTokens(self):
 
@@ -25,4 +25,4 @@ class Lexer:
             self.numberString += 1
             self.numberCharacter = 0
 
-        return self.tokens
+        return self.tokenStream

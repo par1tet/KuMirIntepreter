@@ -2,7 +2,7 @@ import re
 
 tokenTypes = {
     "Operation": [r"\+",r"-",r"\*",r"/"],
-    "Number": [r'\d+'],
+    "Number": [r'\d+|\.'],
     "Space": [r'\s']
 }
 
